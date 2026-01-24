@@ -56,22 +56,3 @@ jobs:
               ...protectionSettings
             });
             console.log(`✅ Branch protection applied to ${branch}`);
-
-            // 2. Enable GitHub Pages (Build Source: GitHub Actions)
-            try {
-              await github.rest.repos.updateInformationAboutPagesSite({
-                owner,
-                repo,
-                source: {
-                  build_type: "workflow"
-                }
-              });
-              console.log(`✅ GitHub Pages configured to use GitHub Actions`);
-            } catch (error) {
-               // If pages is not enabled yet, we might need to create it, but 'update' usually works if it exists or enables it.
-               // However, strictly enabling 'workflow' source might fail if pages isn't initialized.
-               // Let's try to 'create' if update fails, or just catch the specific error.
-               // Actually, 'updateInformationAboutPagesSite' is the standard way to configure source.
-               console.log(`⚠️  Could not configure Pages automatically: ${error.message}`);
-               console.log(`   (You may need to go to Settings > Pages and set source to "GitHub Actions" manually once)`);
-            }
