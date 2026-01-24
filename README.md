@@ -33,7 +33,7 @@ python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 ```
 
-For detailed setup instructions (including HPC environments), see the [Developer Guide](docs/developer-guide.md).
+For detailed setup instructions (including HPC environments), see the [Contributing Guide](docs/CONTRIBUTING.md).
 
 ### Development Commands
 
