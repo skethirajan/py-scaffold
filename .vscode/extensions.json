@@ -13,6 +13,7 @@
         // ---------------------------------------------------------------------------
         "njpwerner.autodocstring", // Auto-generate NumPy-style docstrings
         "davidanson.vscode-markdownlint", // Markdown linter for docs
-        "aaron-bond.better-comments" // Color-coded comment annotations
+        "aaron-bond.better-comments", // Color-coded comment annotations
+        "vivaxy.vscode-conventional-commits" // Interactive Conventional Commits wizard
     ]
 }
