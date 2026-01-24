@@ -8,10 +8,6 @@ name: Repository Settings
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main, fix/*]
-    paths:
-      - .github/workflows/settings.yml
 
 permissions:
   contents: write
