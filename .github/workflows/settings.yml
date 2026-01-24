@@ -28,7 +28,8 @@ jobs:
             // 1. Require status checks (lint, typecheck, test, precommit)
             const requiredChecks = [
               "Pre-commit checks",
-              "Test",
+              "Test (Python 3.12)",
+              "Test (Python 3.13)",
               "Lint",
               "typecheck"
             ];
