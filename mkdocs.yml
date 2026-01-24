@@ -12,7 +12,7 @@ theme:
   # favicon: assets/logo.png  # Add your logo
   # logo: assets/logo.png
   palette:
-    primary: indigo
+    primary: orange
     scheme: slate
   font:
     text: Roboto
@@ -117,20 +117,19 @@ plugins:
 
 nav:
   - Home: index.md
-  - Guide:
-      - Installation: getting-started/installation.md
+  - Installation Guide 🔧: getting-started/installation.md
+  - User Guide 🧠:
       - Quick Start: getting-started/quickstart.md
-  - Developer Guide: CONTRIBUTING.md
-  - Maintainers:
-      - Internal Guide: maintainers/internal.md
-  - Reference: reference/
-  - About:
+  - Code Documentation 📖: reference/
+  - Developer Guide 🤝:
+      - Contributing: CONTRIBUTING.md
+  - About 📜:
       - Changelog: about/changelog.md
-      - Code of Conduct: about/conduct.md
       - Contributors: about/contributors.md
       - Acknowledgements: about/acknowledgements.md
-      - FAQ: about/faq.md
       - License: about/license.md
+      - Code of Conduct: about/conduct.md
+      - FAQ: about/faq.md
 
 extra:
   social:
