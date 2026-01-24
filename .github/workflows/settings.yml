@@ -10,8 +10,8 @@ on:
   workflow_dispatch: # run manually from the Actions UI
 
 permissions:
-  contents: read
-  pull-requests: read
+  contents: write
+  pull-requests: write
 
 jobs:
   protect-main:
@@ -52,7 +52,7 @@ jobs:
             };
 
             // Apply the protection rule
-            await github.repos.updateBranchProtection({
+            await github.rest.repos.updateBranchProtection({
               owner,
               repo,
               branch,
