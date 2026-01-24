@@ -1,7 +1,8 @@
-"""
-Pre-bump hook to ensure cz bump is only run on the main branch
-and by authorized maintainers/owners.
-"""
+"""Pre-bump hook to ensure cz bump is only run on the main branch and by
+authorized maintainers/owners."""
+
+from __future__ import annotations
+
 import subprocess
 import sys
 import tomllib
@@ -46,14 +47,14 @@ def get_maintainer_emails() -> set[str]:
         sys.exit(1)
 
     try:
-        with open(pyproject_path, "rb") as f:
-            data = tomllib.load(f)
-
-        maintainers = data.get("project", {}).get("maintainers", [])
-        return {m.get("email") for m in maintainers if "email" in m}
+        # Load pyproject.toml safely using Path
+        data = tomllib.loads(pyproject_path.read_bytes())
     except Exception as e:
-        print(f"Error parsing pyproject.toml: {e}")
+        print(f"Error reading pyproject.toml: {e}")
         sys.exit(1)
+
+    maintainers = data.get("project", {}).get("maintainers", [])
+    return {m.get("email") for m in maintainers if "email" in m}
 
 
 def main() -> int:
@@ -61,7 +62,7 @@ def main() -> int:
     # 1. Check Branch
     branch = get_current_branch()
     if branch != "main":
-        print(f"Error: 'cz bump' execution is restricted to the 'main' branch.")
+        print("Error: 'cz bump' execution is restricted to the 'main' branch.")
         print(f"Current branch: '{branch}'")
         print("Please switch to 'main' before releasing a new version.")
         return 1

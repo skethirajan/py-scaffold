@@ -23,8 +23,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v7
+      - name: Create virtual environment
+        run: uv venv
 
       - name: Install pre-commit and dev deps
         run: |
@@ -32,7 +32,7 @@ jobs:
           uv sync --extra dev   # installs ruff, docformatter, pyrefly, etc.
 
       - name: Run all pre-commit hooks
-        run: pre-commit run --all-files
+        run: uv run pre-commit run --all-files
   # Typecheck job removed – handled by .github/workflows/type_check.yml
   test:
     name: Test (Python ${{ matrix.python-version }})

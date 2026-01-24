@@ -148,7 +148,8 @@ def main() -> int:
 
     # Perform replacements
     for file_path_str in files_to_update:
-        if file_path_str == "ruff.toml": continue # Skipped if removed
+        if file_path_str == "ruff.toml":
+            continue  # Skipped if removed
         fpath = project_root / file_path_str
         if not fpath.exists():
             continue
@@ -160,8 +161,12 @@ def main() -> int:
         content = content.replace("username", github_username)
         content = content.replace("Your Name", author_name)
         content = content.replace("you@example.com", author_email)
-        content = content.replace("src/package_name", f"src/{package_name}") # For hatch/commitizen configs
-        content = content.replace("[COPYRIGHT HOLDER]", replacements["[COPYRIGHT HOLDER]"])
+        content = content.replace(
+            "src/package_name", f"src/{package_name}"
+        )  # For hatch/commitizen configs
+        content = content.replace(
+            "[COPYRIGHT HOLDER]", replacements["[COPYRIGHT HOLDER]"]
+        )
         content = content.replace("[YEAR]", replacements["[YEAR]"])
 
         fpath.write_text(content, "utf-8")
