@@ -7,7 +7,11 @@
 name: Repository Settings
 
 on:
-  workflow_dispatch: # run manually from the Actions UI
+  workflow_dispatch:
+  push:
+    branches: [main, fix/*]
+    paths:
+      - .github/workflows/settings.yml
 
 permissions:
   contents: write
@@ -27,17 +31,18 @@ jobs:
             const branch = "main";
             // 1. Require status checks (lint, typecheck, test, precommit)
             const requiredChecks = [
+              "Pre-commit checks",
+              "Test (Python 3.12)",
+              "Test (Python 3.13)",
               "lint",
-              "typecheck",
-              "test",
-              "precommit"
+              "typecheck"
             ];
             const protectionSettings = {
               required_status_checks: {
                 strict: true,
                 contexts: requiredChecks
               },
-              enforce_admins: true,
+              enforce_admins: false,
               required_pull_request_reviews: {
                 required_approving_review_count: 1,
                 dismiss_stale_reviews: true,

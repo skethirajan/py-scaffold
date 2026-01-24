@@ -164,7 +164,7 @@ docstring-code-format = true
 project-includes = ["src"]
 project-excludes = ["**/.[!/.]*", "**/tests"]
 search-path = ["src"]
-ignore-missing-imports = true
+ignore-missing-imports = []
 
 # =============================================================================
 # Pytest
