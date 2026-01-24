@@ -48,7 +48,7 @@ def get_maintainer_emails() -> set[str]:
 
     try:
         # Load pyproject.toml safely using Path
-        data = tomllib.loads(pyproject_path.read_bytes())
+        data = tomllib.loads(pyproject_path.read_text())
     except Exception as e:
         print(f"Error reading pyproject.toml: {e}")
         sys.exit(1)
