@@ -2,9 +2,19 @@
 
 A minimal scaffold for building modern, reproducible scientific Python packages.
 
-[![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
+
+[![Python](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-BSD--3--Clause-green.svg)](LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/package_name.svg)](https://pypi.org/project/package_name/)
+[![CI](https://github.com/username/package_name/actions/workflows/ci.yml/badge.svg)](https://github.com/username/package_name/actions/workflows/ci.yml)
+[![Docs](https://github.com/username/package_name/actions/workflows/docs.yml/badge.svg)](https://username.github.io/package_name/)
+[![codecov](https://codecov.io/gh/username/package_name/graph/badge.svg)](https://codecov.io/gh/username/package_name)
+
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![Pyrefly](https://img.shields.io/badge/pyrefly-checked-blueviolet)](https://github.com/NoneGG/pyrefly)
+[![MkDocs](https://img.shields.io/badge/docs-mkdocs-blue.svg)](https://www.mkdocs.org/)
+
 
 ## Features
 
