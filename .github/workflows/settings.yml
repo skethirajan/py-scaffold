@@ -27,10 +27,10 @@ jobs:
             const branch = "main";
             // 1. Require status checks (lint, typecheck, test, precommit)
             const requiredChecks = [
-              "lint",
-              "typecheck",
-              "test",
-              "precommit"
+              "Pre-commit checks",
+              "Test",
+              "Lint",
+              "typecheck"
             ];
             const protectionSettings = {
               required_status_checks: {
