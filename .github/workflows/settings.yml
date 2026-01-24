@@ -7,7 +7,11 @@
 name: Repository Settings
 
 on:
-  workflow_dispatch: # run manually from the Actions UI
+  workflow_dispatch:
+  push:
+    branches: [main, fix/*]
+    paths:
+      - .github/workflows/settings.yml
 
 permissions:
   contents: write
@@ -30,7 +34,7 @@ jobs:
               "Pre-commit checks",
               "Test (Python 3.12)",
               "Test (Python 3.13)",
-              "Lint",
+              "lint",
               "typecheck"
             ];
             const protectionSettings = {
