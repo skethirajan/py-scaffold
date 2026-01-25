@@ -168,6 +168,18 @@ def main() -> int:
             "[COPYRIGHT HOLDER]", replacements["[COPYRIGHT HOLDER]"]
         )
         content = content.replace("[YEAR]", replacements["[YEAR]"])
+        # Handle hardcoded template values so new projects get fresh placeholders
+        content = content.replace(
+            "skethirajan/py-scaffold", f"{github_username}/{package_name}"
+        )
+        content = content.replace(
+            "skethirajan", github_username
+        )  # catch-all for remaining hardcoded username
+        content = content.replace(
+            "py-scaffold", package_name
+        )  # catch-all for remaining hardcoded repo name
+        # Remove hardcoded Codecov token query parameter for new projects
+        content = re.sub(r"\?token=[a-zA-Z0-9]+", "", content)
 
         fpath.write_text(content, "utf-8")
         print(f"  Updated: {file_path_str}")
@@ -193,13 +205,6 @@ def main() -> int:
     print("=" * 60)
     print("  Project initialized successfully!")
     print("=" * 60)
-    print()
-    print("Next steps:")
-    print(f"  1. cd {project_root}")
-    print("  2. git add . && git commit -m 'feat: initialize project'")
-    print("  3. pip install -e '.[dev]'")
-    print("  4. pre-commit install")
-    print("  5. pytest")
     print()
 
     return 0
