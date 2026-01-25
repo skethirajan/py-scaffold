@@ -13,28 +13,23 @@ A minimal scaffold for building modern, reproducible scientific Python packages.
 
 ## Create your own python package with this template
 
-Use this template to create your own repo, ```my_project```. Then clone your ```my_project``` repo and run the initialization script to automatically rename everything:
+Use this template to create your own repo, ```new_project```. Then clone your ```new_project``` repo and follow along the instructions given in the [Developer Guide on Environment Setup](docs/CONTRIBUTING.md#environment-setup) to set up your environment.
+
+Now, run the initialization script (will interactively prompt you for some details) to automatically rename all the placeholders from the template.
 
 ```bash
-# Clone the template
-git clone https://github.com/<user_name>/my_project.git
-cd my_project
-
-# Run the init script
-python scripts/init_project.py
+# Run the init script (ensure you're at the project root level)
+uv run python scripts/init_project.py
 ```
 
-The script will interactively prompt you for:
-- Package name
-- Description
-- Author name and email
-- GitHub username
+Before you push your changes (initialized with your project details), remember to configure GitHub Pages to host your docs. Also, you need to setup ```ADMIN_TOKEN``` (used in [settings.yml](.github/workflows/settings.yml)) and ```CODECOV_TOKEN``` (used in [ci.yml](.github/workflows/ci.yml)). Now, manually run the Repository Settings workflow (you need to do it just once) from the Actions tab of your repo.
 
-After that you can delete the init script.
+Now, you can push your changes to GitHub and the CI/CD pipeline will take care of the rest.
 
 ```bash
-# Delete the init script
-rm -rf scripts/init_project.py
+git add .
+git commit -m "chore(main): initialize project"
+git push origin main
 ```
 
 ## 📦 Features
