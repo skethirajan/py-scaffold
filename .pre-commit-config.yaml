@@ -1,5 +1,4 @@
 # Pre-commit configuration
-# Install: pip install pre-commit && pre-commit install
 # Run manually: pre-commit run --all-files
 
 repos:
@@ -45,10 +44,11 @@ repos:
     hooks:
       - id: pyrefly
         name: pyrefly
+        language: python
         entry: pyrefly check
-        language: system
         types: [python]
         pass_filenames: false
+        additional_dependencies: ["pyrefly"]
 
   # Validate pyproject.toml
   - repo: https://github.com/abravalheri/validate-pyproject
