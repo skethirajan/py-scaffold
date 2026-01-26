@@ -143,7 +143,15 @@ def main() -> int:
         "docs/getting-started/installation.md",
         "docs/getting-started/quickstart.md",
         "src/package_name/__init__.py",
+        "src/package_name/__init__.py",
         "tests/test_package.py",
+        ".github/CODEOWNERS",
+        ".github/PULL_REQUEST_TEMPLATE.md",
+        ".github/ISSUE_TEMPLATE/config.yaml",
+        ".github/ISSUE_TEMPLATE/bug.yaml",
+        ".github/ISSUE_TEMPLATE/docs.yaml",
+        ".github/ISSUE_TEMPLATE/idea.yaml",
+        ".github/ISSUE_TEMPLATE/misc.yaml",
     ]
 
     # Perform replacements
