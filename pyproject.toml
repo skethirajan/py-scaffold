@@ -99,6 +99,7 @@ select = [
     "ASYNC", # flake8-async
     "B",     # flake8-bugbear
     "C4",    # flake8-comprehensions
+    "D",     # pydocstyle
     "DTZ",   # flake8-datetimez
     "E",     # pycodestyle error
     "F",     # pyflakes
@@ -109,6 +110,7 @@ select = [
     "INT",   # flake8-gettext
     "ISC",   # flake8-implicit-str-concat
     "LOG",   # flake8-logging
+    "N",     # pep8-naming
     "NPY",   # numpy-specific rules
     "PD",    # pandas-vet
     "PERF",  # perflint
