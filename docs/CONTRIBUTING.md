@@ -150,6 +150,7 @@ pre-commit run --all-files
    ```python
    # Good
    from pathlib import Path
+
    config_path = Path(__file__).parent / "config" / "settings.yaml"
 
    # Bad
